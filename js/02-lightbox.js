@@ -4,6 +4,7 @@ import { galleryItems } from './gallery-items.js';
 const galleryEl = document.querySelector(".gallery");
 
 //  Gallery
+
 galleryItems.forEach((item) => {
   const listItem = document.createElement("li");
   listItem.classList.add("gallery__item");
@@ -20,7 +21,8 @@ galleryItems.forEach((item) => {
   galleryEl.append(listItem);
 });
 
-// SimpleLightbox for Gallery
+// simpleLightbox for Gallery
+
 const imageGallery = new SimpleLightbox('.gallery a', {
   caption: true,
   captionsData: 'alt',
@@ -28,6 +30,7 @@ const imageGallery = new SimpleLightbox('.gallery a', {
 });
 
 // function for keydown
+
 const onKeydown = (event) => {
   if (event.key === "Escape") {
     imageGallery.close();

@@ -4,6 +4,7 @@ import { galleryItems } from "./gallery-items.js";
 const galleryEl = document.querySelector(".gallery");
 
 // Gallery
+
 galleryItems.forEach((item) => {
   const listItem = document.createElement("li");
   listItem.classList.add("gallery__item");
@@ -20,6 +21,7 @@ galleryItems.forEach((item) => {
 });
 
 // Escape key
+
 const escapeButton = (event, imageGallery) => {
   if (event.key === "Escape") {
     imageGallery.close();
@@ -35,12 +37,14 @@ galleryEl.addEventListener("click", (event) => {
   }
 
   // basicLightbox
+
   const imageGallery = basicLightbox.create(
     `<img src="${clickedOn.dataset.source}">`
   );
   imageGallery.show();
 
-// keydown function and eventListner pentru tasta Escape sa inchida lightboxul
+  // keydown function and eventListner for Escape key to close Lightbox
+  
     const onKeydown = (e) => escapeButton(e, imageGallery);
     document.addEventListener("keydown", onKeydown);
 });
